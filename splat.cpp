@@ -7353,7 +7353,11 @@ void SiteReport(struct site xmtr)
 		   from the transmitter site at azimuths of 0, 45, 90,
 		   135, 180, 225, 270, and 315 degrees. */
 
-		for (azi=0; azi<=315; azi+=45)
+		// Jose; modifying to consider all 360 azimuths
+		// just in the site report
+
+		// for (azi=0; azi<=315; azi+=45)
+		for (azi=0; azi<=360; azi+=1)
 		{
 			fprintf(fd,"Average terrain at %3d degrees azimuth: ",azi);
 			terrain=AverageTerrain(xmtr,(double)azi,2.0,10.0);
